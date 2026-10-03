@@ -85,7 +85,6 @@
             text-align: center;
             max-width: 1000px;
             margin: 0 auto;
-            position: relative;
         }
 
         .badge {
@@ -177,8 +176,6 @@
             padding: 2.5rem;
             border-radius: 20px;
             transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
         }
 
         .card:hover {
@@ -198,7 +195,6 @@
             margin-bottom: 1.5rem;
             color: var(--primary);
             font-size: 1.5rem;
-            font-weight: bold;
         }
 
         .card h3 {
@@ -212,69 +208,39 @@
             font-size: 0.95rem;
         }
 
-        /* Interaktiver Konfigurator */
-        .calculator-section {
-            background: linear-gradient(180deg, var(--dark-bg) 0%, #141418 100%);
+        /* Process Section (3 Adımda Süreç) */
+        .process-section {
+            background: #141418;
             padding: 5rem 8%;
             border-top: 1px solid var(--card-border);
             border-bottom: 1px solid var(--card-border);
         }
 
-        .calc-box {
-            max-width: 700px;
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
             margin: 0 auto;
+        }
+
+        .process-step {
             background: var(--card-bg);
             border: 1px solid var(--card-border);
-            padding: 2.5rem;
-            border-radius: 24px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.6);
-        }
-
-        .form-group {
-            margin-bottom: 1.5rem;
-            text-align: left;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 0.5rem;
-            font-weight: 600;
-            font-size: 0.95rem;
-        }
-
-        .form-control {
-            width: 100%;
-            padding: 0.9rem 1.2rem;
-            background: #0F0F11;
-            border: 1px solid var(--card-border);
-            border-radius: 12px;
-            color: #FFF;
-            font-size: 1rem;
-            outline: none;
-            transition: border 0.3s ease;
-        }
-
-        .form-control:focus {
-            border-color: var(--primary);
-        }
-
-        .calc-result {
-            margin-top: 2rem;
-            padding: 1.5rem;
-            background: rgba(255, 107, 0, 0.08);
-            border: 1px dashed var(--primary);
+            padding: 2rem;
             border-radius: 16px;
-            text-align: center;
+            position: relative;
         }
 
-        .calc-result span {
-            font-size: 1.8rem;
+        .step-number {
+            font-size: 2.5rem;
             font-weight: 800;
             color: var(--primary);
-            display: block;
+            opacity: 0.8;
+            margin-bottom: 0.5rem;
         }
 
-        /* FAQ Accordion */
+        /* FAQ Section */
         .faq-section {
             padding: 5rem 8%;
             max-width: 900px;
@@ -349,7 +315,6 @@
         @media (max-width: 768px) {
             .hero h1 { font-size: 2.2rem; }
             .hero p { font-size: 1rem; }
-            .calc-box { padding: 1.5rem; }
         }
     </style>
 </head>
@@ -367,8 +332,8 @@
         <h1>Premium <span>Überdachungen</span> & Bausanierung nach Maß</h1>
         <p>Höchste Präzision, langlebige Materialien und erstklassiger Service. Wir verwandeln Ihr Zuhause in ein modernes Meisterwerk.</p>
         <div class="hero-btns">
-            <a href="https://wa.me/4915205382097" class="nav-btn" style="padding: 1rem 2.2rem;">Kostenlose Erstberatung</a>
-            <a href="#konfigurator" class="btn-secondary">Unverbindlich Berechnen</a>
+            <a href="https://wa.me/4915205382097?text=Hallo%20VAU%20BAU%20Team,%20ich%20interessiere%20mich%20f%C3%BCr%20ein%20unverbindliches%20Angebot." class="nav-btn" style="padding: 1rem 2.2rem;">Kostenlose Erstberatung</a>
+            <a href="#prozess" class="btn-secondary">Unser Ablauf</a>
         </div>
     </section>
 
@@ -392,36 +357,33 @@
             <div class="card">
                 <div class="card-icon">🔨</div>
                 <h3>Bausanierung & Innenausbau</h3>
-                <p>Professionelle Komplett- und Teilsanierungen von Bändern, Böden und Wohnräumen aus einer Hand.</p>
+                <p>Professionelle Komplett- und Teilsanierungen von Bädern, Böden und Wohnräumen aus einer Hand.</p>
             </div>
         </div>
     </section>
 
-    <!-- Konfigurator -->
-    <section class="calculator-section" id="konfigurator">
+    <!-- Process Section -->
+    <section class="process-section" id="prozess">
         <div class="section-title">
-            <h2>Interaktiver Preis-Rechner</h2>
-            <p style="color: var(--text-muted);">Erhalten Sie in wenigen Sekunden eine ungefähre Schätzung</p>
+            <h2>In 3 einfachen Schritten zu Ihrem Projekt</h2>
+            <p style="color: var(--text-muted);">Unkompliziert, transparent und verlässlich</p>
         </div>
-        <div class="calc-box">
-            <div class="form-group">
-                <label>Gewünschte Dienstleistung</label>
-                <select id="serviceType" class="form-control" onchange="calculatePrice()">
-                    <option value="überdachung">Terrassenüberdachung</option>
-                    <option value="wintergarten">Wintergarten</option>
-                    <option value="sanierung">Bausanierung / Innenausbau</option>
-                </select>
+        <div class="process-grid">
+            <div class="process-step">
+                <div class="step-number">01</div>
+                <h3>Anfrage senden</h3>
+                <p style="color: var(--text-muted); font-size: 0.95rem;">Kontaktieren Sie uns direkt über WhatsApp oder Telefon mit Ihren Wünschen.</p>
             </div>
-            <div class="form-group">
-                <label>Ungefähre Fläche (in m²)</label>
-                <input type="number" id="areaSize" class="form-control" value="18" min="5" max="100" oninput="calculatePrice()">
+            <div class="process-step">
+                <div class="step-number">02</div>
+                <h3>Kostenloser Vor-Ort-Termin</h3>
+                <p style="color: var(--text-muted); font-size: 0.95rem;">Wir besichtigen Ihr Objekt, messen alles präzise aus und beraten Sie persönlich.</p>
             </div>
-            <div class="calc-result">
-                Ungefähre Orientierung:
-                <span id="priceDisplay">Ca. 4.500 € - 6.500 €</span>
-                <p style="font-size: 0.8rem; color: var(--text-muted); margin-top: 0.5rem;">*Genaue Preise erfolgen nach kostenlosem Vor-Ort-Termin.</p>
+            <div class="process-step">
+                <div class="step-number">03</div>
+                <h3>Fachgerechte Montage</h3>
+                <p style="color: var(--text-muted); font-size: 0.95rem;">Unser erfahrenes Team setzt Ihr Projekt pünktlich, sauber und in höchster Qualität um.</p>
             </div>
-            <a id="whatsappCalcBtn" href="https://wa.me/4915205382097" class="nav-btn" style="display: block; text-align: center; margin-top: 1.5rem;">Dieses Angebot per WhatsApp anfragen</a>
         </div>
     </section>
 
@@ -454,41 +416,11 @@
         <p>&copy; 2026 VAU BAU. Alle Rechte vorbehalten. | Schwäbisch Hall</p>
     </footer>
 
-    <!-- Script für Interaktivität -->
     <script>
-        function calculatePrice() {
-            const service = document.getElementById('serviceType').value;
-            const area = parseFloat(document.getElementById('areaSize').value) || 0;
-            let minPrice = 0;
-            let maxPrice = 0;
-
-            if (service === 'überdachung') {
-                minPrice = area * 250;
-                maxPrice = area * 380;
-            } else if (service === 'wintergarten') {
-                minPrice = area * 550;
-                maxPrice = area * 850;
-            } else {
-                minPrice = area * 180;
-                maxPrice = area * 300;
-            }
-
-            const formattedMin = minPrice.toLocaleString('de-DE');
-            const formattedMax = maxPrice.toLocaleString('de-DE');
-            
-            document.getElementById('priceDisplay').innerText = `Ca. ${formattedMin} € - ${formattedMax} €`;
-            
-            const msg = encodeURIComponent(`Hallo VAU BAU Team, ich habe Interesse an: ${service.toUpperCase()} für ca. ${area} m². Die Orientierung lag bei ${formattedMin}€ - ${formattedMax}€. Ich bitte um einen kostenlosen Vor-Ort-Termin.`);
-            document.getElementById('whatsappCalcBtn').href = `https://wa.me/4915205382097?text=${msg}`;
-        }
-
         function toggleFaq(element) {
             const item = element.parentElement;
             item.classList.toggle('active');
         }
-
-        // Initialberechnung ausführen
-        calculatePrice();
     </script>
 </body>
 </html>
