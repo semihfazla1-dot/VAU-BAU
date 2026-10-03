@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VAU BAU | Montage, Wintergärten & Sanierung</title>
+    <meta name="description" content="Ihr zuverlässiger Partner für Montage, Wintergärten, Überdachungen und Bausanierung in Schwäbisch Hall und Umgebung.">
+    <style>
+        :root {
+            --primary: #d4af37;
+            --dark: #121212;
+            --card-bg: #1e1e1e;
+            --text: #f5f5f5;
+            --text-muted: #a0a0a0;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            background-color: var(--dark);
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 5%;
+            background: rgba(18, 18, 18, 0.95);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid #2a2a2a;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            letter-spacing: 2px;
+            color: var(--primary);
+        }
+
+        .btn {
+            background-color: var(--primary);
+            color: #000;
+            padding: 0.75rem 1.5rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: opacity 0.2s ease;
+        }
+
+        .btn:hover {
+            opacity: 0.9;
+        }
+
+        .hero {
+            padding: 5rem 5% 4rem;
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #fff;
+        }
+
+        .hero p {
+            font-size: 1.15rem;
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+        }
+
+        .services {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            padding: 2rem 5% 5rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .card {
+            background: var(--card-bg);
+            padding: 2rem;
+            border-radius: 8px;
+            border: 1px solid #2d2d2d;
+        }
+
+        .card h3 {
+            color: var(--primary);
+            margin-bottom: 0.75rem;
+            font-size: 1.3rem;
+        }
+
+        .card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        .cta-section {
+            background: #181818;
+            text-align: center;
+            padding: 4rem 5%;
+            border-top: 1px solid #2a2a2a;
+        }
+
+        .cta-section h2 {
+            margin-bottom: 1rem;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            border-top: 1px solid #222;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">VAU BAU</div>
+        <a href="tel:+491743211903" class="btn">Jetzt anrufen</a>
+    </header>
+
+    <section class="hero">
+        <h1>Ihr Experten-Team für Montage & Bausanierung</h1>
+        <p>Professionelle Abwicklung, maximale Transparenz und höchste Qualität für Ihr Bauprojekt in Schwäbisch Hall und Region.</p>
+        <a href="https://wa.me/491743211903" class="btn" style="background-color: #25D366; color: #fff;">Kostenlose Beratung via WhatsApp</a>
+    </section>
+
+    <section class="services">
+        <div class="card">
+            <h3>Wintergärten & Überdachungen</h3>
+            <p>Individuelle Planung und fachgerechte Montage von Terrassenüberdachungen und Wintergärten nach Maß.</p>
+        </div>
+        <div class="card">
+            <h3>Sanierung & Renovierung</h3>
+            <p>Komplett- und Teilsanierungen von Wohngebäuden. Zuverlässige Ausführung von Innenausbau- und Erneuerungsarbeiten.</p>
+        </div>
+        <div class="card">
+            <h3>Montageservice</h3>
+            <p>Präzise Installation und Montage von Bauelementen für Ihr Zuhause. Pünktlich, sauber und nachhaltig.</p>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <h2>Planen Sie ein Bauvorhaben?</h2>
+        <p style="margin-bottom: 1.5rem; color: var(--text-muted);">Vereinbaren Sie jetzt einen unverbindlichen Vor-Ort-Termin.</p>
+        <a href="tel:+491743211903" class="btn">Termin vereinbaren</a>
+    </section>
+
+    <footer>
+        &copy; 2026 VAU BAU. Alle Rechte vorbehalten. | Schwäbisch Hall
+    </footer>
+
+</body>
+</html>
