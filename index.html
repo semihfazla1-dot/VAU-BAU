@@ -3,102 +3,208 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VAU BAU | Montage, Wintergärten & Sanierung</title>
-    <meta name="description" content="Ihr zuverlässiger Partner für Montage, Wintergärten, Überdachungen und Bausanierung.">
+    <title>VAU BAU | Premium Montage, Wintergärten & Bausanierung</title>
+    <meta name="description" content="Ihr exklusiver Partner für hochwertige Terrassenüberdachungen, Wintergärten und Komplettsanierungen in Schwäbisch Hall und Umgebung.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary: #d4af37;
-            --dark: #121212;
-            --card-bg: #1e1e1e;
-            --text: #f5f5f5;
-            --text-muted: #a0a0a0;
+            --primary: #FF6B00;
+            --primary-hover: #E05E00;
+            --dark-bg: #0F0F11;
+            --card-bg: #18181C;
+            --card-border: #2A2A30;
+            --text-light: #FFFFFF;
+            --text-muted: #A1A1AA;
+            --accent-glow: rgba(255, 107, 0, 0.15);
         }
 
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            scroll-behavior: smooth;
         }
 
         body {
-            background-color: var(--dark);
-            color: var(--text);
+            background-color: var(--dark-bg);
+            color: var(--text-light);
             line-height: 1.6;
+            overflow-x: hidden;
         }
 
+        /* Header */
         header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 1.5rem 5%;
-            background: rgba(18, 18, 18, 0.95);
+            padding: 1.2rem 8%;
+            background: rgba(15, 15, 17, 0.85);
+            backdrop-filter: blur(12px);
             position: sticky;
             top: 0;
-            z-index: 100;
-            border-bottom: 1px solid #2a2a2a;
+            z-index: 1000;
+            border-bottom: 1px solid var(--card-border);
         }
 
         .logo {
-            font-size: 1.5rem;
+            font-size: 1.8rem;
             font-weight: 800;
-            letter-spacing: 2px;
+            letter-spacing: 1px;
+            color: var(--text-light);
+        }
+
+        .logo span {
             color: var(--primary);
         }
 
-        .btn {
-            background-color: var(--primary);
-            color: #000;
-            padding: 0.75rem 1.5rem;
-            border-radius: 6px;
+        .nav-btn {
+            background: var(--primary);
+            color: #FFF;
+            padding: 0.75rem 1.8rem;
+            border-radius: 50px;
             text-decoration: none;
-            font-weight: 600;
-            transition: opacity 0.2s ease;
+            font-weight: 700;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 20px var(--accent-glow);
         }
 
-        .btn:hover {
-            opacity: 0.9;
+        .nav-btn:hover {
+            background: var(--primary-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 25px rgba(255, 107, 0, 0.3);
         }
 
+        /* Hero Section */
         .hero {
-            padding: 5rem 5% 4rem;
+            padding: 6rem 8% 4rem;
             text-align: center;
-            max-width: 900px;
+            max-width: 1000px;
             margin: 0 auto;
+            position: relative;
+        }
+
+        .badge {
+            display: inline-block;
+            background: rgba(255, 107, 0, 0.1);
+            border: 1px solid var(--primary);
+            color: var(--primary);
+            padding: 0.4rem 1.2rem;
+            border-radius: 30px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 1.5rem;
         }
 
         .hero h1 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-            color: #fff;
+            font-size: 3.2rem;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(180deg, #FFFFFF 0%, #A1A1AA 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero h1 span {
+            -webkit-text-fill-color: var(--primary);
         }
 
         .hero p {
-            font-size: 1.15rem;
+            font-size: 1.2rem;
             color: var(--text-muted);
-            margin-bottom: 2rem;
+            margin-bottom: 2.5rem;
+            max-width: 750px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
+        .hero-btns {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-secondary {
+            background: transparent;
+            border: 1px solid var(--card-border);
+            color: var(--text-light);
+            padding: 0.85rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--primary);
+            color: var(--primary);
+        }
+
+        /* Services Grid */
         .services {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-            padding: 2rem 5% 5rem;
-            max-width: 1200px;
+            padding: 5rem 8%;
+            max-width: 1300px;
             margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3.5rem;
+        }
+
+        .section-title h2 {
+            font-size: 2.2rem;
+            font-weight: 800;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
         }
 
         .card {
             background: var(--card-bg);
-            padding: 2rem;
-            border-radius: 8px;
-            border: 1px solid #2d2d2d;
+            border: 1px solid var(--card-border);
+            padding: 2.5rem;
+            border-radius: 20px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            border-color: var(--primary);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        .card-icon {
+            width: 50px;
+            height: 50px;
+            background: rgba(255, 107, 0, 0.1);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            color: var(--primary);
+            font-size: 1.5rem;
+            font-weight: bold;
         }
 
         .card h3 {
-            color: var(--primary);
-            margin-bottom: 0.75rem;
-            font-size: 1.3rem;
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
         }
 
         .card p {
@@ -106,69 +212,283 @@
             font-size: 0.95rem;
         }
 
-        .cta-section {
-            background: #181818;
+        /* Interaktiver Konfigurator */
+        .calculator-section {
+            background: linear-gradient(180deg, var(--dark-bg) 0%, #141418 100%);
+            padding: 5rem 8%;
+            border-top: 1px solid var(--card-border);
+            border-bottom: 1px solid var(--card-border);
+        }
+
+        .calc-box {
+            max-width: 700px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            padding: 2.5rem;
+            border-radius: 24px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+            text-align: left;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 0.9rem 1.2rem;
+            background: #0F0F11;
+            border: 1px solid var(--card-border);
+            border-radius: 12px;
+            color: #FFF;
+            font-size: 1rem;
+            outline: none;
+            transition: border 0.3s ease;
+        }
+
+        .form-control:focus {
+            border-color: var(--primary);
+        }
+
+        .calc-result {
+            margin-top: 2rem;
+            padding: 1.5rem;
+            background: rgba(255, 107, 0, 0.08);
+            border: 1px dashed var(--primary);
+            border-radius: 16px;
             text-align: center;
-            padding: 4rem 5%;
-            border-top: 1px solid #2a2a2a;
         }
 
-        .cta-section h2 {
+        .calc-result span {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--primary);
+            display: block;
+        }
+
+        /* FAQ Accordion */
+        .faq-section {
+            padding: 5rem 8%;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 16px;
             margin-bottom: 1rem;
+            overflow: hidden;
         }
 
+        .faq-question {
+            padding: 1.2rem 1.5rem;
+            font-weight: 700;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .faq-answer {
+            padding: 0 1.5rem 1.2rem;
+            color: var(--text-muted);
+            display: none;
+            font-size: 0.95rem;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        .faq-item.active .faq-question {
+            color: var(--primary);
+        }
+
+        /* Floating WhatsApp Button */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #25D366;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+            box-shadow: 0 10px 25px rgba(37, 211, 102, 0.4);
+            z-index: 9999;
+            text-decoration: none;
+            transition: transform 0.3s ease;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+        }
+
+        /* Footer */
         footer {
             text-align: center;
-            padding: 2rem;
+            padding: 3rem 8%;
+            border-top: 1px solid var(--card-border);
             color: var(--text-muted);
-            font-size: 0.85rem;
-            border-top: 1px solid #222;
+            font-size: 0.9rem;
         }
 
         @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 1.8rem;
-            }
+            .hero h1 { font-size: 2.2rem; }
+            .hero p { font-size: 1rem; }
+            .calc-box { padding: 1.5rem; }
         }
     </style>
 </head>
 <body>
 
+    <!-- Header -->
     <header>
-        <div class="logo">VAU BAU</div>
-        <a href="https://wa.me/DEINENUMMER" class="btn">Kontaktieren</a>
+        <div class="logo">VAU <span>BAU</span></div>
+        <a href="https://wa.me/4915205382097" class="nav-btn">Jetzt Anfragen</a>
     </header>
 
+    <!-- Hero -->
     <section class="hero">
-        <h1>Ihr Experten-Team für Montage & Bausanierung</h1>
-        <p>Professionelle Abwicklung, maximale Transparenz und höchste Qualität für Ihr Bauprojekt.</p>
-        <a href="https://wa.me/DEINENUMMER" class="btn" style="background-color: #25D366; color: #fff;">Kostenlose Beratung via WhatsApp</a>
+        <div class="badge">Schwäbisch Hall & Region</div>
+        <h1>Premium <span>Überdachungen</span> & Bausanierung nach Maß</h1>
+        <p>Höchste Präzision, langlebige Materialien und erstklassiger Service. Wir verwandeln Ihr Zuhause in ein modernes Meisterwerk.</p>
+        <div class="hero-btns">
+            <a href="https://wa.me/4915205382097" class="nav-btn" style="padding: 1rem 2.2rem;">Kostenlose Erstberatung</a>
+            <a href="#konfigurator" class="btn-secondary">Unverbindlich Berechnen</a>
+        </div>
     </section>
 
+    <!-- Services -->
     <section class="services">
-        <div class="card">
-            <h3>Wintergärten & Überdachungen</h3>
-            <p>Individuelle Planung und fachgerechte Montage von Terrassenüberdachungen und Wintergärten nach Maß.</p>
+        <div class="section-title">
+            <h2>Unsere Dienstleistungen</h2>
+            <p style="color: var(--text-muted);">Perfektion in jedem Detail für Ihr Bauvorhaben</p>
         </div>
-        <div class="card">
-            <h3>Sanierung & Renovierung</h3>
-            <p>Komplett- und Teilsanierungen von Wohngebäuden. Zuverlässige Ausführung von Innenausbau- und Erneuerungsarbeiten.</p>
-        </div>
-        <div class="card">
-            <h3>Montageservice</h3>
-            <p>Präzise Installation und Montage von Bauelementen für Ihr Zuhause. Pünktlich, sauber und nachhaltig.</p>
+        <div class="grid">
+            <div class="card">
+                <div class="card-icon">🏗️</div>
+                <h3>Terrassenüberdachungen</h3>
+                <p>Individuelle Aluminium- und Glasüberdachungen inkl. Beleuchtung und Sonnenschutz für höchste Ansprüche.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">🏡</div>
+                <h3>Exklusive Wintergärten</h3>
+                <p>Maßgeschneiderte, isolierte Wintergärten für ganzjährigen Wohnkomfort und maximale Lichtdurchflutung.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">🔨</div>
+                <h3>Bausanierung & Innenausbau</h3>
+                <p>Professionelle Komplett- und Teilsanierungen von Bändern, Böden und Wohnräumen aus einer Hand.</p>
+            </div>
         </div>
     </section>
 
-    <section class="cta-section">
-        <h2>Planen Sie ein Bauvorhaben?</h2>
-        <p style="margin-bottom: 1.5rem; color: var(--text-muted);">Vereinbaren Sie jetzt einen unverbindlichen Vor-Ort-Termin.</p>
-        <a href="https://wa.me/DEINENUMMER" class="btn">Termin vereinbaren</a>
+    <!-- Konfigurator -->
+    <section class="calculator-section" id="konfigurator">
+        <div class="section-title">
+            <h2>Interaktiver Preis-Rechner</h2>
+            <p style="color: var(--text-muted);">Erhalten Sie in wenigen Sekunden eine ungefähre Schätzung</p>
+        </div>
+        <div class="calc-box">
+            <div class="form-group">
+                <label>Gewünschte Dienstleistung</label>
+                <select id="serviceType" class="form-control" onchange="calculatePrice()">
+                    <option value="überdachung">Terrassenüberdachung</option>
+                    <option value="wintergarten">Wintergarten</option>
+                    <option value="sanierung">Bausanierung / Innenausbau</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Ungefähre Fläche (in m²)</label>
+                <input type="number" id="areaSize" class="form-control" value="18" min="5" max="100" oninput="calculatePrice()">
+            </div>
+            <div class="calc-result">
+                Ungefähre Orientierung:
+                <span id="priceDisplay">Ca. 4.500 € - 6.500 €</span>
+                <p style="font-size: 0.8rem; color: var(--text-muted); margin-top: 0.5rem;">*Genaue Preise erfolgen nach kostenlosem Vor-Ort-Termin.</p>
+            </div>
+            <a id="whatsappCalcBtn" href="https://wa.me/4915205382097" class="nav-btn" style="display: block; text-align: center; margin-top: 1.5rem;">Dieses Angebot per WhatsApp anfragen</a>
+        </div>
     </section>
 
+    <!-- FAQ -->
+    <section class="faq-section">
+        <div class="section-title">
+            <h2>Häufig gestellte Fragen</h2>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question" onclick="toggleFaq(this)">Wie läuft ein Projekt ab? <span>+</span></div>
+            <div class="faq-answer">Nach Ihrer Anfrage vereinbaren wir einen kostenlosen Vor-Ort-Termin, messen alles exakt aus und erstellen ein maßgeschneidertes Festpreis-Angebot.</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question" onclick="toggleFaq(this)">Ist der Vor-Ort-Termin wirklich kostenlos? <span>+</span></div>
+            <div class="faq-answer">Ja, die Erstberatung und das Aufmaß vor Ort sind für Sie zu 100% kostenlos und unverbindlich.</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question" onclick="toggleFaq(this)">In welchem Umkreis sind Sie tätig? <span>+</span></div>
+            <div class="faq-answer">Wir sind hauptsächlich in Schwäbisch Hall, Crailsheim, Stuttgart und Umgebung für Sie im Einsatz.</div>
+        </div>
+    </section>
+
+    <!-- Floating WhatsApp -->
+    <a href="https://wa.me/4915205382097" class="whatsapp-float" target="_blank" aria-label="WhatsApp Chat">
+        💬
+    </a>
+
+    <!-- Footer -->
     <footer>
-        &copy; 2026 VAU BAU. Alle Rechte vorbehalten.
+        <p>&copy; 2026 VAU BAU. Alle Rechte vorbehalten. | Schwäbisch Hall</p>
     </footer>
 
+    <!-- Script für Interaktivität -->
+    <script>
+        function calculatePrice() {
+            const service = document.getElementById('serviceType').value;
+            const area = parseFloat(document.getElementById('areaSize').value) || 0;
+            let minPrice = 0;
+            let maxPrice = 0;
+
+            if (service === 'überdachung') {
+                minPrice = area * 250;
+                maxPrice = area * 380;
+            } else if (service === 'wintergarten') {
+                minPrice = area * 550;
+                maxPrice = area * 850;
+            } else {
+                minPrice = area * 180;
+                maxPrice = area * 300;
+            }
+
+            const formattedMin = minPrice.toLocaleString('de-DE');
+            const formattedMax = maxPrice.toLocaleString('de-DE');
+            
+            document.getElementById('priceDisplay').innerText = `Ca. ${formattedMin} € - ${formattedMax} €`;
+            
+            const msg = encodeURIComponent(`Hallo VAU BAU Team, ich habe Interesse an: ${service.toUpperCase()} für ca. ${area} m². Die Orientierung lag bei ${formattedMin}€ - ${formattedMax}€. Ich bitte um einen kostenlosen Vor-Ort-Termin.`);
+            document.getElementById('whatsappCalcBtn').href = `https://wa.me/4915205382097?text=${msg}`;
+        }
+
+        function toggleFaq(element) {
+            const item = element.parentElement;
+            item.classList.toggle('active');
+        }
+
+        // Initialberechnung ausführen
+        calculatePrice();
+    </script>
 </body>
 </html>
